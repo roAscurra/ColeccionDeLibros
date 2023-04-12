@@ -28,16 +28,23 @@ class UI{
 
     }
     static limpiarForm(){
-
     }
 }
 class Datos{
     //metodos
     static traerLibros(){
-
+        let libros;
+        if(localStorage.getItem('libros')===null){
+            libros = [];
+        }else{
+            libros = JSON.parse(localStorage.getItem('libros'));
+        }
+        return libros;
     }
     static agregarLibro(libro){
-
+        const libros = Datos.traerLibros();
+        libros.push(libro);
+        localStorage.setItem('libros', JSON.stringify(libros));
     }
     static removerLibro(isbn){
 
@@ -50,8 +57,11 @@ document.getElementById('libroForm').addEventListener('submit',(e) => {
      const titulo = document.getElementById('titulo').value;
      const autor = document.getElementById('autor').value;
      const isbn = document.getElementById('isbn').value;
-     
+
      if(titulo === '' || autor === '' || isbn === ''){
         UI.mostrarAlerta('Por favor complete todos los datos', 'danger');
+     }else{
+        const libro = new Libro(titulo,autor,isbn);
+        Datos.agregarLibro(libro);
      }
 });
