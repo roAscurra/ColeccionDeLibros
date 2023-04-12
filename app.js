@@ -8,6 +8,10 @@ class Libro{
 class UI{
     //metodos
     static mostrarLibros(){
+        const libros = Datos.traerLibros();
+        libros.forEach( libro => {
+            UI.agregarLibro(libro);
+        });
     }
     static agregarLibro(libro){
 
@@ -51,6 +55,8 @@ class Datos{
 
     }
 }
+//carga de la pag
+document.addEventListener('DOMContentLoaded', UI.mostrarLibros());
 //agregar evento submit al formulario
 document.getElementById('libroForm').addEventListener('submit',(e) => {
     e.preventDefault();
