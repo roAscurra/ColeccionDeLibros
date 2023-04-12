@@ -31,6 +31,10 @@ class Datos{
 
     }
     static removerLibro(isbn){
-        
+
     }
 }
+//agregar evento submit al formulario
+document.getElementById('libroForm').addEventListener('submit',(e) => {
+    e.preventDefault();
+});
