@@ -19,6 +19,18 @@ class UI{
 
     }
     static limpiarForm(){
+
+    }
+}
+class Datos{
+    //metodos
+    static traerLibros(){
+
+    }
+    static agregarLibro(libro){
+
+    }
+    static removerLibro(isbn){
         
     }
 }
