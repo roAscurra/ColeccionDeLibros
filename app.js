@@ -14,7 +14,15 @@ class UI{
         });
     }
     static agregarLibro(libro){
-
+        const list = document.getElementById('listaLibros');
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${libro.titulo}</td>
+            <td>${libro.autor}</td>
+            <td>${libro.isbn}</td>
+            <td><a href="#" class="btn btn-danger btn-sm delete">x</a></td>
+        `;
+        list.appendChild(fila);
     }
     static eliminarLibro(elemento){
 
@@ -70,6 +78,7 @@ document.getElementById('libroForm').addEventListener('submit',(e) => {
      }else{
         const libro = new Libro(titulo,autor,isbn);
         Datos.agregarLibro(libro);
+        UI.agregarLibro(libro);
         UI.limpiarForm();
      }
 });
