@@ -15,7 +15,16 @@ class UI{
     static eliminarLibro(elemento){
 
     }
-    static mostrarAlerta(mensaje){
+    static mostrarAlerta(mensaje, className){
+        const div = document.createElement('div');
+        div.className = `alert alert-${className}`;
+        div.appendChild(document.createTextNode(mensaje));
+
+        const container = document.getElementById('container');
+        const form = document.getElementById('libroForm');
+
+        container.insertBefore(div, form);
+        setTimeout(()=>document.querySelector('.alert').remove(), 2000); //duración de la alerta
 
     }
     static limpiarForm(){
@@ -41,5 +50,4 @@ document.getElementById('libroForm').addEventListener('submit',(e) => {
      const titulo = document.getElementById('titulo').value;
      const autor = document.getElementById('autor').value;
      const isbn = document.getElementById('isbn').value;
-     document.getElementById('libroForm').reset();
 });
