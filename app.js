@@ -50,4 +50,8 @@ document.getElementById('libroForm').addEventListener('submit',(e) => {
      const titulo = document.getElementById('titulo').value;
      const autor = document.getElementById('autor').value;
      const isbn = document.getElementById('isbn').value;
+     
+     if(titulo === '' || autor === '' || isbn === ''){
+        UI.mostrarAlerta('Por favor complete todos los datos', 'danger');
+     }
 });
