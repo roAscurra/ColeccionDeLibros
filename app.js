@@ -5,3 +5,20 @@ class Libro{
         this.isbn = isbn;
     }
 }
+class UI{
+    //metodos
+    static mostrarLibros(){
+    }
+    static agregarLibro(libro){
+
+    }
+    static eliminarLibro(elemento){
+
+    }
+    static mostrarAlerta(mensaje){
+
+    }
+    static limpiarForm(){
+        
+    }
+}
