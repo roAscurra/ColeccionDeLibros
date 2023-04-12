@@ -28,6 +28,7 @@ class UI{
 
     }
     static limpiarForm(){
+        document.getElementById('libroForm').reset();
     }
 }
 class Datos{
@@ -63,5 +64,6 @@ document.getElementById('libroForm').addEventListener('submit',(e) => {
      }else{
         const libro = new Libro(titulo,autor,isbn);
         Datos.agregarLibro(libro);
+        UI.limpiarForm();
      }
 });
