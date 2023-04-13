@@ -79,6 +79,7 @@ document.getElementById('libroForm').addEventListener('submit',(e) => {
         const libro = new Libro(titulo,autor,isbn);
         Datos.agregarLibro(libro);
         UI.agregarLibro(libro);
+        UI.mostrarAlerta('Libro agregado con éxito!', 'success');
         UI.limpiarForm();
      }
 });
