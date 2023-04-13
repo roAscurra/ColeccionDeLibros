@@ -25,7 +25,9 @@ class UI{
         list.appendChild(fila);
     }
     static eliminarLibro(elemento){
-
+        if(elemento.classList.contains('delete')){
+            elemento.parentElement.parentElement.remove();
+        };
     }
     static mostrarAlerta(mensaje, className){
         const div = document.createElement('div');
@@ -83,3 +85,8 @@ document.getElementById('libroForm').addEventListener('submit',(e) => {
         UI.limpiarForm();
      }
 });
+//eliminar libro
+document.getElementById('listaLibros').addEventListener('click', (e) =>
+{
+    UI.eliminarLibro(e.target);
+})
