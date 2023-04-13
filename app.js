@@ -96,4 +96,5 @@ document.getElementById('listaLibros').addEventListener('click', (e) =>
 {
     UI.eliminarLibro(e.target);
     Datos.removerLibro(e.target.parentElement.previousElementSibling.textContent);
+    UI.mostrarAlerta('Libro eliminado con éxito!', 'success');
 })
