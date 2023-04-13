@@ -62,7 +62,13 @@ class Datos{
         localStorage.setItem('libros', JSON.stringify(libros));
     }
     static removerLibro(isbn){
-
+        const libros = Datos.traerLibros();
+        libros.forEach((libro, index) => {
+            if(libro.isbn === isbn){
+                libros.splice(index , 1);
+            }
+        })
+        localStorage.setItem('libros', JSON.stringify(libros));
     }
 }
 //carga de la pag
@@ -89,4 +95,5 @@ document.getElementById('libroForm').addEventListener('submit',(e) => {
 document.getElementById('listaLibros').addEventListener('click', (e) =>
 {
     UI.eliminarLibro(e.target);
+    Datos.removerLibro(e.target.parentElement.previousElementSibling.textContent);
 })
