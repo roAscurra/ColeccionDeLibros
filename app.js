@@ -17,10 +17,10 @@ class UI{
         const list = document.getElementById('listaLibros');
         const fila = document.createElement('tr');
         fila.innerHTML = `
-            <td>${libro.titulo}</td>
-            <td>${libro.autor}</td>
-            <td>${libro.isbn}</td>
-            <td><a href="#" class="btn btn-danger btn-sm delete">x</a></td>
+            <td class="text-center">${libro.titulo}</td>
+            <td class="text-center">${libro.autor}</td>
+            <td class="text-center">${libro.isbn}</td>
+            <td class="text-center"><a href="#" class="btn btn-danger btn-sm delete">x</a></td>
         `;
         list.appendChild(fila);
     }
